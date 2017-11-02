@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal" >
+
+        <ToggleButton
+            android:id="@+id/toggleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_gravity="center_horizontal"
+            android:textOff="Auto"
+            android:textOn="Manual"
+            />
+
+        <Button
+            android:id="@+id/updateMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_toRightOf="@+id/toggleButton"
+            android:layout_marginLeft="5dp"
+            android:text="update now!"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/robotCmd1"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toggleButton"
+            android:layout_alignStart="@+id/toggleButton"
+            android:text="Command 1" />
+
+        <Button
+            android:id="@+id/robotCmd2"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/robotCmd1"
+            android:layout_alignStart="@+id/robotCmd1"
+            android:text="Command 2" />
+
+
+        <TextView
+            android:id="@+id/robotStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/updateMap"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/margin_large"
+            android:text="Robot is ready!" />
+
+        <Button
+            android:id="@+id/btnForward"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btnBackward"
+            android:layout_alignStart="@+id/btnBackward"
+            android:text="Forward"
+            android:layout_gravity="center_horizontal"/>
+
+        <Button
+            android:id="@+id/btnBackward"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btnLeft"
+            android:layout_below="@+id/robotCmd1"
+            android:text="Backward"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/btnLeft"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Left"
+            android:layout_gravity="center_horizontal"
+            android:layout_toRightOf="@+id/robotCmd1"
+            android:layout_below="@+id/robotCmd1"/>
+
+        <Button
+            android:id="@+id/btnRight"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Right"
+            android:layout_gravity="center_horizontal"
+            android:layout_toRightOf="@+id/btnBackward"
+            android:layout_below="@+id/robotCmd1"/>
+
+        <Button
+            android:id="@+id/go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go"
+            android:layout_gravity="center_horizontal"
+            android:layout_toRightOf="@+id/btnRight"
+            android:layout_below="@+id/robotCmd1"/>
+
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="RESET"
+            android:layout_gravity="center_horizontal"
+            android:layout_toRightOf="@+id/go"
+            android:layout_below="@+id/robotCmd1"/>
+
+        <Button
+            android:id="@+id/btnCalibrate"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/updateMap"
+            android:layout_toEndOf="@+id/robotCmd1"
+            android:text="Calibrate" />
+
+        <Button
+            android:id="@+id/btnUturn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btnForward"
+            android:layout_toEndOf="@+id/btnForward"
+            android:text="U turn" />
+
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/gridview"
+        android:layout_width="450dp"
+        android:layout_height="600dp"
+        android:numColumns="15"
+        android:stretchMode="columnWidth" />
+
+    <ListView
+        android:id="@+id/in"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/edit_text_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send" />
+    </LinearLayout>
+
+</LinearLayout>
